@@ -6,9 +6,10 @@ const withAuth = require('../utils/auth');
 // /dahsboard route maps all posts to be seen
 router.get('/', withAuth, (req, res) => {
     Post.findAll({
-        where: {
-            user_id: req.session.user_id
-        },
+        // where filter triggers a 500 error, can't find why req.session.user_id wont work, so filtering of user's posts not functional
+        // where: {
+        //     user_id: req.session.post.user_id
+        // },
         atttributes: [
             'id',
             'title',

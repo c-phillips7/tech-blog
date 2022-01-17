@@ -1,18 +1,22 @@
-<div class="container">
+<section>
   <h2>Create New Post</h2>
 
-
-  {{!-- user input to create blog post --}}
-  <form>
-
-
+  {{! user input to create blog post }}
+  <form class="new-post-form">
+    <div>
+      <input type="text" name="post-title" placeholder="Title" />
+    </div>
+    <div>
+      <textarea name="post-content"></textarea>
+    </div>
+    <button type="submit" class="submit-btn">Post</button>
   </form>
-</div>
+</section>
 
-{{!-- check if any other posts exist --}}
+{{! check if any other posts exist }}
 {{#if posts.length}}
-<div>
-  <h2>Your posts</h2>
+  <div>
+    <h2>Your posts</h2>
 
-</div>
+  </div>
 {{/if}}
