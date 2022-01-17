@@ -1,13 +1,14 @@
-<div>
+<article class="post">
     <div class="title">
-        <h2>{{title}}</h2>
-        <p>{{description}}</p>
+        <a href="/post/{{id}}"> {{title}} </a>
+    </div>
+    <div>
+        <p class="description">
+            {{content}}
+        </p>
     </div>
     <div class="subtext">
-        {{ log "here" }}
-        {{ log id }}
-        by {{user.username}}, created at {{format_date created_at}}
-        <a href="/post/{{id}}"></a>
+        by {{user.username}} on {{format_date created_at}}
+        <a href="/post/{{id}}">comments</a>
     </div>
-
-</div>
+</article>
