@@ -16,9 +16,9 @@ Comment.init(
       type: DataTypes.STRING,
       allowNull: false,
       // from boilerplate online for blogs
-      validate: {
-        len: [1]
-      }
+      // validate: {
+      //   len: [1]
+      // }
     },
     user_id: {
       type: DataTypes.INTEGER,

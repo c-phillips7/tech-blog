@@ -5,6 +5,11 @@ const postData = [
   {
     title: 'This is a test title!',
     description: 'This is a test description',
+    user_id: 1
+  },
+  {
+    title: 'This is another test title!!!',
+    description: 'This is another test description',
     user_id: 2
   }
 ];

@@ -1,3 +1,7 @@
-DROP DATABASE IF EXISTS museum_db;
+DROP DATABASE IF EXISTS tech_blog_db;
 
-CREATE DATABASE museum_db;
+CREATE DATABASE tech_blog_db;
+
+USE tech_blog_db;
+
+SHOW * FROM tech_blog_db;
