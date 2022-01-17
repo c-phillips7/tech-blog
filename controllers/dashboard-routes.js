@@ -38,12 +38,13 @@ router.get('/', withAuth, (req, res) => {
     .then(dbPostData => {
         const posts = dbPostData.map(post => post.get({ plain:true }));
         res.render('dashboard', {posts, loggedIn: true });
+        console.log('dashboeard rendered');
     })
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
-    })
-})
+    });
+});
 
 // TODO: Edit post option
 
