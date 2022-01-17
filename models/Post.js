@@ -20,6 +20,7 @@ Post.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    // TODO: date created
     user_id: {
       type: DataTypes.INTEGER,
       references: {
