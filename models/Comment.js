@@ -3,6 +3,8 @@ const sequelize = require('../config/connection');
 
 class Comment extends Model {}
 
+// TODO: add created at for Comment model
+
 Comment.init(
   {
     // id, comment_text, user_id, post-id
