@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
     });
 });
 
-// post request to make a new post
+// post request to make a new comment
 router.post('/', (req, res) => {
     if(req.session) {
         Comment.create({
@@ -34,5 +34,23 @@ router.post('/', (req, res) => {
 });
 
 // delete request to destroy comment
+router.delete('/:id', (req, res) => {
+    Comment.destroy({
+        where: {
+            id: req.params.id
+        }
+    })
+        .then(dbCommentData => {
+            if(!dbCommentData) {
+                res.status(404).json({ message: 'No comment found' });
+                return;
+            }
+            res.json(dbCommentData)
+            })
+            .catch(err => {
+                console.log(err);
+                res.status(500).json(err);
+        });
+    });
 
 module.exports = router;
