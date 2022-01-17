@@ -1,0 +1,32 @@
+<section>
+    <div>
+        <h2>{{post.title}}</h2>
+    </div>
+    <div>
+        <p>
+            {{post.content}}
+        </p>
+    </div>
+    <div class="subtext">
+        <p>by {{post.user.username}} on {{format_date post.created_at}}</p>
+    </div>
+</section>
+
+{{!-- form to leave a comment --}}
+{{#if loggedIn}}
+    <form class="comment-form">
+        <div>
+            <textarea name="comment-body"></textarea>
+        </div>
+
+        <div>
+            <button type="submit" class="submit-btn">add comment</button>
+        </div>
+
+    </form>
+{{else}}
+<div>login to comment</div>
+{{/if}}
+
+{{!-- List out existing comments from partial --}}
+{{> comment-view post.comments}}
