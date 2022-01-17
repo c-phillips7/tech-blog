@@ -63,7 +63,7 @@ router.get('/:id', (req, res) => {
   })
     .then(dbPostData => {
       if (!dbPostData) {
-        res.status(404).json({ message: 'No post found with this id' });
+        res.status(404).json({ message: 'No post found' });
         return;
       }
       res.json(dbPostData);
@@ -88,6 +88,28 @@ router.post('/', (req, res) => {
     });
 });
 
-// Update post by ID
+// Update post by id
+router.put('/:id', (req, res) => {
+  Post.update(req.body,
+    {
+      where: {
+        id: req.params.id
+      }
+    }
+  )
+    .then(dbPostData => {
+      if (!dbPostData) {
+        res.status(404).json({ message: 'No post found' });
+        return;
+      }
+      res.json(dbPostData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+// Delete post by id
 
 module.exports = router;
